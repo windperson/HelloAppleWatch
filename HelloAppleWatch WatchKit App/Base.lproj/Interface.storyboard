@@ -1,14 +1,41 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="HelloAppleWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="LRz-AY-LTo">
+                            <items>
+                                <label alignment="left" text="A Text Label" id="biY-PQ-J20"/>
+                            </items>
+                        </group>
+                        <separator alignment="left" id="GCt-Zg-W3z"/>
+                        <button width="1" alignment="left" title="A Button" id="tCW-Lw-TB5">
+                            <connections>
+                                <action selector="btnClicked" destination="AgC-eL-Hgc" id="dIG-Kb-9AT"/>
+                            </connections>
+                        </button>
+                        <switch width="1" alignment="left" value="YES" title="Reset Switch" id="i1k-e7-TEV">
+                            <connections>
+                                <action selector="resetSwitched:" destination="AgC-eL-Hgc" id="pNL-AD-ufh"/>
+                            </connections>
+                        </switch>
+                    </items>
+                    <connections>
+                        <outlet property="aLabel" destination="biY-PQ-J20" id="fAd-qL-koE"/>
+                        <outlet property="resetSwitch" destination="i1k-e7-TEV" id="74i-qZ-Qm4"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
@@ -31,7 +58,7 @@
         <!--Notification Controller-->
         <scene sceneID="ZPc-GJ-vnh">
             <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="HelloAppleWatch_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="468" y="643"/>
         </scene>

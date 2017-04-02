@@ -17,6 +17,13 @@ class InterfaceController: WKInterfaceController {
         
         // Configure interface objects here.
     }
+    var count = 1
+    @IBAction func btnClicked() {
+        let s = "Click " + String(count) + " times"
+        aLabel.setText(s)
+        count += 1
+    }
+    @IBOutlet var aLabel: WKInterfaceLabel!
     
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
@@ -26,6 +33,12 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    @IBOutlet var resetSwitch: WKInterfaceSwitch!
+    @IBAction func resetSwitched(_ value: Bool) {
+        count = 0
+        aLabel.setText("Reseted!")
+        resetSwitch.setOn(true)
     }
 
 }
